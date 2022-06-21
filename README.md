@@ -93,7 +93,8 @@ Server harus mengembalikan respons dengan:
 Status Code : 200
 Response Body:
 
-{
+```ruby 
+    {
     "status": "success",
     "data": {
         "books": [
@@ -114,15 +115,17 @@ Response Body:
             }
         ]
     }
-}
+} 
+```
 Jika belum terdapat buku yang dimasukkan, server bisa merespons dengan array books kosong.
-
+```ruby
 {
     "status": "success",
     "data": {
         "books": []
     }
 }
+```
 
 
 Kriteria 3 : API dapat menampilkan detail buku
@@ -135,16 +138,17 @@ Bila buku dengan id yang dilampirkan oleh client tidak ditemukan, maka server ha
 
 Status Code : 404
 Response Body:
-
+```ruby
 {
     "status": "fail",
     "message": "Buku tidak ditemukan"
 }
+```
 Bila buku dengan id yang dilampirkan ditemukan, maka server harus mengembalikan respons dengan:
 
 Status Code : 200
 Response Body:
-
+```ruby
 {
     "status": "success",
     "data": {
@@ -164,7 +168,7 @@ Response Body:
         }
     }
 }
-
+```
 
 Kriteria 4 : API dapat mengubah data buku
 API yang Anda buat harus dapat mengubah data buku berdasarkan id melalui route:
@@ -173,6 +177,7 @@ Method : PUT
 URL : /books/{bookId}
 Body Request:
 
+```ruby
 {
     "name": string,
     "year": number,
@@ -183,6 +188,7 @@ Body Request:
     "readPage": number,
     "reading": boolean
 }
+```
 Server harus merespons gagal bila:
 
 Client tidak melampirkan properti name pada request body. Bila hal ini terjadi, maka server akan merespons dengan:
