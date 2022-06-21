@@ -8,7 +8,7 @@ API yang Anda buat harus dapat menyimpan buku melalui route:
 Method : POST
 URL : /books
 Body Request:
-
+```ruby
 {
     "name": string,
     "year": number,
@@ -19,8 +19,9 @@ Body Request:
     "readPage": number,
     "reading": boolean
 }
+```
 Objek buku yang disimpan pada server harus memiliki struktur seperti contoh di bawah ini:
-
+```ruby
 {
     "id": "Qbax5Oy7L8WKf74l",
     "name": "Buku A",
@@ -35,6 +36,7 @@ Objek buku yang disimpan pada server harus memiliki struktur seperti contoh di b
     "insertedAt": "2021-03-04T09:11:44.598Z",
     "updatedAt": "2021-03-04T09:11:44.598Z"
 }
+```
 Properti yang ditebalkan diolah dan didapatkan di sisi server. Berikut penjelasannya:
 
 id : nilai id haruslah unik. Untuk membuat nilai unik, Anda bisa memanfaatkan nanoid.
@@ -47,32 +49,35 @@ Server harus merespons gagal bila:
 Client tidak melampirkan properti namepada request body. Bila hal ini terjadi, maka server akan merespons dengan:
 Status Code : 400
 Response Body:
-
+```ruby
 {
     "status": "fail",
     "message": "Gagal menambahkan buku. Mohon isi nama buku"
 }
+```
 Client melampirkan nilai properti readPage yang lebih besar dari nilai properti pageCount. Bila hal ini terjadi, maka server akan merespons dengan:
 Status Code : 400
 Response Body:
-
+```ruby
 {
     "status": "fail",
     "message": "Gagal menambahkan buku. readPage tidak boleh lebih besar dari pageCount"
 }
+```
 Server gagal memasukkan buku karena alasan umum (generic error). Bila hal ini terjadi, maka server akan merespons dengan:
 Status Code : 500
 Response Body:
-
+```ruby
 {
     "status": "error",
     "message": "Buku gagal ditambahkan"
 }
+```
 Bila buku berhasil dimasukkan, server harus mengembalikan respons dengan:
 
 Status Code : 201
 Response Body:
-
+```ruby
 {
     "status": "success",
     "message": "Buku berhasil ditambahkan",
@@ -80,7 +85,7 @@ Response Body:
         "bookId": "1L7ZtDUFeGs7VlEt"
     }
 }
-
+```
 
 Kriteria 2 : API dapat menampilkan seluruh buku
 API yang Anda buat harus dapat menampilkan seluruh buku yang disimpan melalui route:
@@ -194,11 +199,12 @@ Server harus merespons gagal bila:
 Client tidak melampirkan properti name pada request body. Bila hal ini terjadi, maka server akan merespons dengan:
 Status Code : 400
 Response Body:
-
+```ruby
 {
     "status": "fail",
     "message": "Gagal memperbarui buku. Mohon isi nama buku"
 }
+```
 Client melampirkan nilai properti readPage yang lebih besar dari nilai properti pageCount. Bila hal ini terjadi, maka server akan merespons dengan:
 Status Code : 400
 Response Body:
