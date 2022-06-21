@@ -208,30 +208,31 @@ Response Body:
 Client melampirkan nilai properti readPage yang lebih besar dari nilai properti pageCount. Bila hal ini terjadi, maka server akan merespons dengan:
 Status Code : 400
 Response Body:
-
+``` ruby
 {
     "status": "fail",
     "message": "Gagal memperbarui buku. readPage tidak boleh lebih besar dari pageCount"
 }
+```
 Idyang dilampirkan oleh client tidak ditemukkan oleh server. Bila hal ini terjadi, maka server akan merespons dengan:
 Status Code : 404
 Response Body:
-
+```ruby
 {
     "status": "fail",
     "message": "Gagal memperbarui buku. Id tidak ditemukan"
 }
+```
 Bila buku berhasil diperbarui, server harus mengembalikan respons dengan:
 
 Status Code : 200
 Response Body:
-
+``` ruby
 {
     "status": "success",
     "message": "Buku berhasil diperbarui"
 }
-
-
+```
 Kriteria 5 : API dapat menghapus buku
 API yang Anda buat harus dapat menghapus buku berdasarkan id melalui route berikut:
 
@@ -241,17 +242,19 @@ Bila id yang dilampirkan tidak dimiliki oleh buku manapun, maka server harus men
 
 Status Code : 404
 Response Body:
-
+``` ruby
 {
     "status": "fail",
     "message": "Buku gagal dihapus. Id tidak ditemukan"
 }
+```
 Bila id dimiliki oleh salah satu buku, maka buku tersebut harus dihapus dan server mengembalikan respons berikut:
 
 Status Code : 200
 Response Body:
-
+``` ruby
 {
     "status": "success",
     "message": "Buku berhasil dihapus"
 }
+```
