@@ -8,7 +8,7 @@ API yang Anda buat harus dapat menyimpan buku melalui route:
 Method : POST
 URL : /books
 Body Request:
-```ruby
+```json
 {
     "name": string,
     "year": number,
@@ -21,7 +21,7 @@ Body Request:
 }
 ```
 Objek buku yang disimpan pada server harus memiliki struktur seperti contoh di bawah ini:
-```ruby
+```json
 {
     "id": "Qbax5Oy7L8WKf74l",
     "name": "Buku A",
@@ -49,7 +49,7 @@ Server harus merespons gagal bila:
 Client tidak melampirkan properti namepada request body. Bila hal ini terjadi, maka server akan merespons dengan:
 Status Code : 400
 Response Body:
-```ruby
+```json
 {
     "status": "fail",
     "message": "Gagal menambahkan buku. Mohon isi nama buku"
@@ -58,7 +58,7 @@ Response Body:
 Client melampirkan nilai properti readPage yang lebih besar dari nilai properti pageCount. Bila hal ini terjadi, maka server akan merespons dengan:
 Status Code : 400
 Response Body:
-```ruby
+```json
 {
     "status": "fail",
     "message": "Gagal menambahkan buku. readPage tidak boleh lebih besar dari pageCount"
@@ -67,7 +67,7 @@ Response Body:
 Server gagal memasukkan buku karena alasan umum (generic error). Bila hal ini terjadi, maka server akan merespons dengan:
 Status Code : 500
 Response Body:
-```ruby
+```json
 {
     "status": "error",
     "message": "Buku gagal ditambahkan"
@@ -77,7 +77,7 @@ Bila buku berhasil dimasukkan, server harus mengembalikan respons dengan:
 
 Status Code : 201
 Response Body:
-```ruby
+```json
 {
     "status": "success",
     "message": "Buku berhasil ditambahkan",
@@ -98,7 +98,7 @@ Server harus mengembalikan respons dengan:
 Status Code : 200
 Response Body:
 
-```ruby 
+```json
     {
     "status": "success",
     "data": {
@@ -123,7 +123,7 @@ Response Body:
 } 
 ```
 Jika belum terdapat buku yang dimasukkan, server bisa merespons dengan array books kosong.
-```ruby
+```json
 {
     "status": "success",
     "data": {
@@ -143,7 +143,7 @@ Bila buku dengan id yang dilampirkan oleh client tidak ditemukan, maka server ha
 
 Status Code : 404
 Response Body:
-```ruby
+```json
 {
     "status": "fail",
     "message": "Buku tidak ditemukan"
@@ -153,7 +153,7 @@ Bila buku dengan id yang dilampirkan ditemukan, maka server harus mengembalikan 
 
 Status Code : 200
 Response Body:
-```ruby
+```json
 {
     "status": "success",
     "data": {
@@ -182,7 +182,7 @@ Method : PUT
 URL : /books/{bookId}
 Body Request:
 
-```ruby
+```json
 {
     "name": string,
     "year": number,
@@ -199,7 +199,7 @@ Server harus merespons gagal bila:
 Client tidak melampirkan properti name pada request body. Bila hal ini terjadi, maka server akan merespons dengan:
 Status Code : 400
 Response Body:
-```ruby
+```json
 {
     "status": "fail",
     "message": "Gagal memperbarui buku. Mohon isi nama buku"
@@ -208,7 +208,7 @@ Response Body:
 Client melampirkan nilai properti readPage yang lebih besar dari nilai properti pageCount. Bila hal ini terjadi, maka server akan merespons dengan:
 Status Code : 400
 Response Body:
-``` ruby
+``` json
 {
     "status": "fail",
     "message": "Gagal memperbarui buku. readPage tidak boleh lebih besar dari pageCount"
@@ -217,7 +217,7 @@ Response Body:
 Idyang dilampirkan oleh client tidak ditemukkan oleh server. Bila hal ini terjadi, maka server akan merespons dengan:
 Status Code : 404
 Response Body:
-```ruby
+```json
 {
     "status": "fail",
     "message": "Gagal memperbarui buku. Id tidak ditemukan"
@@ -227,7 +227,7 @@ Bila buku berhasil diperbarui, server harus mengembalikan respons dengan:
 
 Status Code : 200
 Response Body:
-``` ruby
+``` json
 {
     "status": "success",
     "message": "Buku berhasil diperbarui"
@@ -242,7 +242,7 @@ Bila id yang dilampirkan tidak dimiliki oleh buku manapun, maka server harus men
 
 Status Code : 404
 Response Body:
-``` ruby
+``` json
 {
     "status": "fail",
     "message": "Buku gagal dihapus. Id tidak ditemukan"
@@ -252,7 +252,7 @@ Bila id dimiliki oleh salah satu buku, maka buku tersebut harus dihapus dan serv
 
 Status Code : 200
 Response Body:
-``` ruby
+``` json
 {
     "status": "success",
     "message": "Buku berhasil dihapus"
