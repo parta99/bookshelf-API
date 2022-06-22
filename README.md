@@ -1,10 +1,10 @@
 # bookshelf-API
 Submission  Submission Bookshelf API
 Terdapat 5 kriteria utama yang harus Anda penuhi dalam membuat proyek Bookshelf API.
-```ruby
+
 Kriteria 1 : API dapat menyimpan buku
 API yang Anda buat harus dapat menyimpan buku melalui route:
-
+```ruby
 Method : POST
 URL : /books
 Body Request:
@@ -90,10 +90,10 @@ Response Body:
 
 Kriteria 2 : API dapat menampilkan seluruh buku
 API yang Anda buat harus dapat menampilkan seluruh buku yang disimpan melalui route:
-
+```js
 Method : GET
 URL: /books
-
+```
 Server harus mengembalikan respons dengan:
 
 Status Code : 200
@@ -136,9 +136,10 @@ Jika belum terdapat buku yang dimasukkan, server bisa merespons dengan array boo
 
 Kriteria 3 : API dapat menampilkan detail buku
 API yang Anda buat harus dapat menampilkan seluruh buku yang disimpan melalui route:
-
+```js
 Method : GET
 URL: /books/{bookId}
+```
 
 Bila buku dengan id yang dilampirkan oleh client tidak ditemukan, maka server harus mengembalikan respons dengan:
 
@@ -178,11 +179,11 @@ Response Body:
 
 Kriteria 4 : API dapat mengubah data buku
 API yang Anda buat harus dapat mengubah data buku berdasarkan id melalui route:
-
+```js
 Method : PUT
 URL : /books/{bookId}
 Body Request:
-
+```
 ```json
 {
     "name": string,
@@ -236,9 +237,10 @@ Response Body:
 ```
 Kriteria 5 : API dapat menghapus buku
 API yang Anda buat harus dapat menghapus buku berdasarkan id melalui route berikut:
-
+```js
 Method : DELETE
 URL: /books/{bookId}
+```
 Bila id yang dilampirkan tidak dimiliki oleh buku manapun, maka server harus mengembalikan respons berikut:
 
 Status Code : 404
