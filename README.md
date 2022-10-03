@@ -1,5 +1,4 @@
 # bookshelf-API
-Submission  Submission Bookshelf API
 Terdapat 5 kriteria utama yang harus Anda penuhi dalam membuat proyek Bookshelf API.
 
 Kriteria 1 : API dapat menyimpan buku
